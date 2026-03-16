@@ -54,6 +54,23 @@ Systematically compared averaging, weighted averaging, rank averaging across Efn
     └── lightning-model-definitions.py             # Shared PyTorch Lightning modules
 ```
 
+
+## Kaggle Notebooks
+
+Key notebooks published on Kaggle ([illidan7](https://www.kaggle.com/illidan7)):
+
+- [SIIM-COVID19-BronzeLungRushStage2 (Study)](https://www.kaggle.com/code/illidan7/siim-covid19-bronzelungrushstage2-study) (2 upvotes)
+- [SIIM-COVID19-Illidefont (Full)](https://www.kaggle.com/code/illidan7/siim-covid19-illidefont-full) (2 upvotes)
+- [SIIM-COVID19-BronzeLungRush (Experiment)](https://www.kaggle.com/code/illidan7/siim-covid19-bronzelungrush-experiment)
+- [SIIM-COVID19-BronzeLungRush (Submit)](https://www.kaggle.com/code/illidan7/siim-covid19-bronzelungrush-submit)
+- [SIIM-COVID19-BronzeLungRushStage2 (Image)](https://www.kaggle.com/code/illidan7/siim-covid19-bronzelungrushstage2-image)
+- [SIIM-COVID19-BronzeLungRushStage2](https://www.kaggle.com/code/illidan7/siim-covid19-bronzelungrushstage2)
+- [SIIM-COVID19-EnsembleOpt](https://www.kaggle.com/code/illidan7/siim-covid19-ensembleopt)
+- [SIIM-COVID19-Illidefont-Final (2models)](https://www.kaggle.com/code/illidan7/siim-covid19-illidefont-final-2models)
+- [SIIM-COVID19-Illidefont-Final (4models)](https://www.kaggle.com/code/illidan7/siim-covid19-illidefont-final-4models)
+- [SIIM-COVID19-Illidefont (Study)](https://www.kaggle.com/code/illidan7/siim-covid19-illidefont-study)
+- [SIIM-COVID19-LitModels (Infer)](https://www.kaggle.com/code/illidan7/siim-covid19-litmodels-infer)
+- [SIIM-COVID19-Strat1 (Infer)](https://www.kaggle.com/code/illidan7/siim-covid19-strat1-infer)
 ## Tech Stack
 
 - **Classification**: EfficientNet-B7 (Keras), EfficientNetV2-L/S, Swin Transformer, ResNet50 (timm + PyTorch Lightning)
