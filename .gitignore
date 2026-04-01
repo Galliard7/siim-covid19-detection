@@ -36,6 +36,10 @@ Thumbs.db
 *.dicom
 *.dcm
 
+# Allow assets directory (README images)
+!assets/
+!assets/**
+
 # Archives
 *.zip
 *.tar
