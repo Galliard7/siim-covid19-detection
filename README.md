@@ -1,5 +1,7 @@
 # SIIM-FISABIO-RSNA COVID-19 Detection — Kaggle Competition
 
+![Competition Header](assets/header.png)
+
 ## Overview
 
 The [SIIM-FISABIO-RSNA COVID-19 Detection](https://www.kaggle.com/competitions/siim-covid19-detection) competition (2021) required both study-level classification (4 classes: negative, typical, indeterminate, atypical pneumonia) and image-level object detection (opacity bounding boxes) from chest X-rays.
@@ -29,6 +31,39 @@ Generated OOF predictions from 11+ models and trained a LightGBM meta-learner wi
 ### 5. Ensemble Optimization
 
 Systematically compared averaging, weighted averaging, rank averaging across EfnB7/Swin/EffV2/Eff3. The final 4-model study ensemble + YOLOv5 detection achieved the best result.
+
+## Results
+
+| Model | Task | Notes |
+|---|---|---|
+| ResNet50 (PyTorch Lightning) | Study classification | 5-fold stratified CV |
+| EfficientNet-B6-NS (timm) | Study classification | 5-fold |
+| EfficientNet-B7 (Keras) | Study classification | Part of final 4-model ensemble |
+| EfficientNetV2-L | Study classification | Stage 2 addition |
+| Swin Transformer | Study classification | Part of final ensemble |
+| YOLOv5x | Opacity detection | Weighted Box Fusion |
+| LightGBM meta-learner | Stacking | Focal Loss, 11+ model OOF |
+| **Final: 4-model study + YOLOv5** | **Both tasks** | **Best combined mAP** |
+
+## Architecture
+
+```mermaid
+graph LR
+    A["Chest X-Rays (DICOM)"] --> B["DICOM Processing<br>VOI LUT + MONOCHROME1"]
+    B --> C1["Study Classification"]
+    B --> C2["Opacity Detection"]
+    C1 --> D1["EfficientNet-B7"]
+    C1 --> D2["EfficientNetV2-L"]
+    C1 --> D3["Swin Transformer"]
+    C1 --> D4["EfficientNet-B3-NS"]
+    D1 --> E["4-Model Study Ensemble<br>(weighted averaging)"]
+    D2 --> E
+    D3 --> E
+    D4 --> E
+    C2 --> F["YOLOv5x + WBF"]
+    E --> G["Final Submission<br>Study mAP + Image mAP"]
+    F --> G
+```
 
 ## Repository Structure
 
